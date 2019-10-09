@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.workingbit.conqcubes",
+      "nativeLanguage": "ru"
+    },
+    "jhipsterVersion": "6.3.1",
+    "applicationType": "monolith",
+    "baseName": "conqcubes",
+    "packageName": "com.workingbit.conqcubes",
+    "packageFolder": "com/workingbit/conqcubes",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NDM0MzE3Njk5ZjZmOTcwZGJmMmZlOThkY2I2OTY1NjkzMjViNjNjNTc0MTlhMDhiNWI0ZjkxNzBhYzFlZDhmOWQ4MDliZjM2YjcwOTg0M2MzMTRjODI5OTliY2FiOTUxOTQwODU2ZDcyNzM3Yjc1Mzk3MjY0YjRlZjFkYzg3NWQ=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "lumen",
+    "clientThemeVariant": "primary",
+    "testFrameworks": ["protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "ru",
+    "languages": ["ru", "en"],
+    "blueprints": []
+  }
+}
