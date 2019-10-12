@@ -1,0 +1,76 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="conqcubesApp.cell.home.title">Cells</span>
+        <button [routerLink]="['/cell/new']" class="btn btn-primary float-right jh-create-entity create-cell"
+                id="jh-create-entity">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span jhiTranslate="conqcubesApp.cell.home.createLabel">
+            Create a new Cell
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div *ngIf="cells?.length === 0" class="alert alert-warning">
+        <span jhiTranslate="conqcubesApp.cell.home.notFound">No cells found</span>
+    </div>
+    <div *ngIf="cells?.length > 0" class="table-responsive">
+        <table aria-describedby="page-heading" class="table table-striped">
+            <thead>
+            <tr>
+                <th><span jhiTranslate="global.field.id">ID</span></th>
+                <th><span jhiTranslate="conqcubesApp.cell.x">X</span></th>
+                <th><span jhiTranslate="conqcubesApp.cell.y">Y</span></th>
+                <th><span jhiTranslate="conqcubesApp.cell.w">W</span></th>
+                <th><span jhiTranslate="conqcubesApp.cell.h">H</span></th>
+                <th><span jhiTranslate="conqcubesApp.cell.field">Field</span></th>
+                <th><span jhiTranslate="conqcubesApp.cell.player">Player</span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cell of cells ;trackBy: trackId">
+                <td><a [routerLink]="['/cell', cell.id, 'view' ]">{{cell.id}}</a></td>
+                <td>{{cell.x}}</td>
+                <td>{{cell.y}}</td>
+                <td>{{cell.w}}</td>
+                <td>{{cell.h}}</td>
+                <td>
+                    <div *ngIf="cell.field">
+                        <a [routerLink]="['/field', cell.field?.id, 'view' ]">{{cell.field?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="cell.player">
+                        <a [routerLink]="['/player', cell.player?.id, 'view' ]">{{cell.player?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button [routerLink]="['/cell', cell.id, 'view' ]"
+                                class="btn btn-info btn-sm"
+                                type="submit">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button [routerLink]="['/cell', cell.id, 'edit']"
+                                class="btn btn-primary btn-sm"
+                                type="submit">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button [routerLink]="['/cell', { outlets: { popup: cell.id + '/delete'} }]"
+                                class="btn btn-danger btn-sm"
+                                queryParamsHandling="merge"
+                                replaceUrl="true"
+                                type="submit">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+{
+  "name": "Player",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "cell",
+      "otherEntityRelationshipName": "player",
+      "relationshipName": "capturedCell"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "game",
+      "otherEntityRelationshipName": "loggedPlayer",
+      "relationshipName": "gameHistory"
+    }
+  ],
+  "changelogDate": "20191012202703",
+  "entityTableName": "player",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
+}

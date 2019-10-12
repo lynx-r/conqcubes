@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cell">
+            <h2><span jhiTranslate="conqcubesApp.cell.detail.title">Cell</span> {{cell.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="conqcubesApp.cell.x">X</span></dt>
+                <dd>
+                    <span>{{cell.x}}</span>
+                </dd>
+                <dt><span jhiTranslate="conqcubesApp.cell.y">Y</span></dt>
+                <dd>
+                    <span>{{cell.y}}</span>
+                </dd>
+                <dt><span jhiTranslate="conqcubesApp.cell.w">W</span></dt>
+                <dd>
+                    <span>{{cell.w}}</span>
+                </dd>
+                <dt><span jhiTranslate="conqcubesApp.cell.h">H</span></dt>
+                <dd>
+                    <span>{{cell.h}}</span>
+                </dd>
+                <dt><span jhiTranslate="conqcubesApp.cell.field">Field</span></dt>
+                <dd>
+                    <div *ngIf="cell.field">
+                        <a [routerLink]="['/field', cell.field?.id, 'view']">{{cell.field?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="conqcubesApp.cell.player">Player</span></dt>
+                <dd>
+                    <div *ngIf="cell.player">
+                        <a [routerLink]="['/player', cell.player?.id, 'view']">{{cell.player?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button (click)="previousState()"
+                    class="btn btn-info"
+                    type="submit">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button [routerLink]="['/cell', cell.id, 'edit']"
+                    class="btn btn-primary"
+                    type="button">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

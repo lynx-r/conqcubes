@@ -1,0 +1,44 @@
+{
+  "name": "Cell",
+  "fields": [
+    {
+      "fieldName": "x",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "y",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "w",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "h",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "field",
+      "otherEntityName": "field",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipName": "player",
+      "otherEntityName": "player",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20191012202704",
+  "entityTableName": "cell",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
+}

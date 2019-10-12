@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form (ngSubmit)="save()" [formGroup]="editForm" name="editForm" novalidate role="form">
+            <h2 id="jhi-cell-heading" jhiTranslate="conqcubesApp.cell.home.createOrEditLabel">Create or edit a Cell</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div [hidden]="!editForm.get('id').value" class="form-group">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input class="form-control" formControlName="id" id="id" name="id" readonly
+                           type="text"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_x" jhiTranslate="conqcubesApp.cell.x">X</label>
+                    <input class="form-control" formControlName="x" id="field_x" name="x"
+                           type="number"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_y" jhiTranslate="conqcubesApp.cell.y">Y</label>
+                    <input class="form-control" formControlName="y" id="field_y" name="y"
+                           type="number"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_w" jhiTranslate="conqcubesApp.cell.w">W</label>
+                    <input class="form-control" formControlName="w" id="field_w" name="w"
+                           type="number"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_h" jhiTranslate="conqcubesApp.cell.h">H</label>
+                    <input class="form-control" formControlName="h" id="field_h" name="h"
+                           type="number"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_field"
+                           jhiTranslate="conqcubesApp.cell.field">Field</label>
+                    <select class="form-control" formControlName="field" id="field_field" name="field">
+                        <option [ngValue]="null"></option>
+                        <option *ngFor="let fieldOption of fields; trackBy: trackFieldById"
+                                [ngValue]="fieldOption.id === editForm.get('field').value?.id ? editForm.get('field').value : fieldOption">{{fieldOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_player"
+                           jhiTranslate="conqcubesApp.cell.player">Player</label>
+                    <select class="form-control" formControlName="player" id="field_player" name="player">
+                        <option [ngValue]="null"></option>
+                        <option *ngFor="let playerOption of players; trackBy: trackPlayerById"
+                                [ngValue]="playerOption.id === editForm.get('player').value?.id ? editForm.get('player').value : playerOption">{{playerOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button (click)="previousState()" class="btn btn-secondary" id="cancel-save" type="button">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button [disabled]="editForm.invalid || isSaving" class="btn btn-primary" id="save-entity"
+                        type="submit">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

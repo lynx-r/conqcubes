@@ -1,0 +1,30 @@
+{
+  "name": "Field",
+  "fields": [
+    {
+      "fieldName": "width",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "height",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "cell",
+      "otherEntityRelationshipName": "field",
+      "relationshipName": "cell"
+    }
+  ],
+  "changelogDate": "20191012202701",
+  "entityTableName": "field",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
+}

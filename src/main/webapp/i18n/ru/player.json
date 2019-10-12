@@ -1,0 +1,25 @@
+{
+  "conqcubesApp": {
+    "player": {
+      "home": {
+        "title": "Players",
+        "createLabel": "Создать новый Player",
+        "createOrEditLabel": "Создать или отредактировать Player",
+        "notFound": "No Players found"
+      },
+      "created": "Новый Player создан с идентификатором {{ param }}",
+      "updated": "Player обновлен с идентификатором {{ param }}",
+      "deleted": "Player удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Player {{ id }}?"
+      },
+      "detail": {
+        "title": "Player"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "capturedCell": "Captured Cell",
+      "gameHistory": "Game History"
+    }
+  }
+}

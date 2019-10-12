@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="game">
+            <h2><span jhiTranslate="conqcubesApp.game.detail.title">Game</span> {{game.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="conqcubesApp.game.player">Player</span></dt>
+                <dd>
+                    <div *ngIf="game.player">
+                        <a [routerLink]="['/player', game.player?.id, 'view']">{{game.player?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="conqcubesApp.game.gameField">Game Field</span></dt>
+                <dd>
+                    <div *ngIf="game.gameField">
+                        <a [routerLink]="['/field', game.gameField?.id, 'view']">{{game.gameField?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="conqcubesApp.game.loggedPlayer">Logged Player</span></dt>
+                <dd>
+                    <div *ngIf="game.loggedPlayer">
+                        <a [routerLink]="['/player', game.loggedPlayer?.id, 'view']">{{game.loggedPlayer?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button (click)="previousState()"
+                    class="btn btn-info"
+                    type="submit">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button [routerLink]="['/game', game.id, 'edit']"
+                    class="btn btn-primary"
+                    type="button">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

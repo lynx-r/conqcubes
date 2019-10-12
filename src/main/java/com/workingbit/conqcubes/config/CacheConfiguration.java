@@ -1,17 +1,18 @@
 package com.workingbit.conqcubes.config;
 
-import java.time.Duration;
-
-import org.ehcache.config.builders.*;
-import org.ehcache.jsr107.Eh107Configuration;
-
-import org.hibernate.cache.jcache.ConfigSettings;
 import io.github.jhipster.config.JHipsterProperties;
-
+import org.ehcache.config.builders.CacheConfigurationBuilder;
+import org.ehcache.config.builders.ExpiryPolicyBuilder;
+import org.ehcache.config.builders.ResourcePoolsBuilder;
+import org.ehcache.jsr107.Eh107Configuration;
+import org.hibernate.cache.jcache.ConfigSettings;
 import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.time.Duration;
 
 @Configuration
 @EnableCaching
@@ -42,6 +43,13 @@ public class CacheConfiguration {
             createCache(cm, com.workingbit.conqcubes.domain.User.class.getName());
             createCache(cm, com.workingbit.conqcubes.domain.Authority.class.getName());
             createCache(cm, com.workingbit.conqcubes.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.workingbit.conqcubes.domain.Field.class.getName());
+            createCache(cm, com.workingbit.conqcubes.domain.Field.class.getName() + ".cells");
+            createCache(cm, com.workingbit.conqcubes.domain.Game.class.getName());
+            createCache(cm, com.workingbit.conqcubes.domain.Player.class.getName());
+            createCache(cm, com.workingbit.conqcubes.domain.Player.class.getName() + ".capturedCells");
+            createCache(cm, com.workingbit.conqcubes.domain.Player.class.getName() + ".gameHistories");
+            createCache(cm, com.workingbit.conqcubes.domain.Cell.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Cell.
+    -->
+    <changeSet id="20191012202704-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="field_id"
+                                 baseTableName="cell"
+                                 constraintName="fk_cell_field_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="field"/>
+
+        <addForeignKeyConstraint baseColumnNames="player_id"
+                                 baseTableName="cell"
+                                 constraintName="fk_cell_player_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="player"/>
+
+    </changeSet>
+</databaseChangeLog>

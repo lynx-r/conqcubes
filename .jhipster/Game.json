@@ -1,0 +1,38 @@
+{
+  "name": "Game",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "player",
+      "otherEntityRelationshipName": "game",
+      "relationshipName": "player",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "field",
+      "otherEntityRelationshipName": "game",
+      "relationshipName": "gameField",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "player",
+      "otherEntityRelationshipName": "gameHistory",
+      "relationshipName": "loggedPlayer",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20191012202702",
+  "entityTableName": "game",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
+}

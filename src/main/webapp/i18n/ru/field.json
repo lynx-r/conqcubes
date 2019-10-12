@@ -1,0 +1,24 @@
+{
+  "conqcubesApp": {
+    "field": {
+      "home": {
+        "title": "Fields",
+        "createLabel": "Создать новый Field",
+        "createOrEditLabel": "Создать или отредактировать Field",
+        "notFound": "No Fields found"
+      },
+      "created": "Новый Field создан с идентификатором {{ param }}",
+      "updated": "Field обновлен с идентификатором {{ param }}",
+      "deleted": "Field удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Field {{ id }}?"
+      },
+      "detail": {
+        "title": "Field"
+      },
+      "width": "Width",
+      "height": "Height",
+      "cell": "Cell"
+    }
+  }
+}

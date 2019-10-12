@@ -1,0 +1,53 @@
+entity Field {
+	width Integer
+    height Integer
+}
+
+entity Game {
+}
+
+entity Player {
+	firstName String
+    lastName String
+}
+
+entity Cell {
+	x Integer
+    y Integer
+    w Integer
+    h Integer
+}
+
+relationship OneToMany {
+	Player{capturedCell} to Cell
+}
+
+relationship OneToOne {
+	Game{player} to Player
+}
+
+relationship OneToMany {
+	Player{gameHistory} to Game{loggedPlayer}
+}
+
+relationship OneToOne {
+	Game{gameField} to Field
+}
+
+relationship OneToMany {
+	Field{cell} to Cell
+}
+
+// Set pagination options
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except GameCell, Cell, Field
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
+
+
+

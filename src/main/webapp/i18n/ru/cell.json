@@ -1,0 +1,27 @@
+{
+  "conqcubesApp": {
+    "cell": {
+      "home": {
+        "title": "Cells",
+        "createLabel": "Создать новый Cell",
+        "createOrEditLabel": "Создать или отредактировать Cell",
+        "notFound": "No Cells found"
+      },
+      "created": "Новый Cell создан с идентификатором {{ param }}",
+      "updated": "Cell обновлен с идентификатором {{ param }}",
+      "deleted": "Cell удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Cell {{ id }}?"
+      },
+      "detail": {
+        "title": "Cell"
+      },
+      "x": "X",
+      "y": "Y",
+      "w": "W",
+      "h": "H",
+      "field": "Field",
+      "player": "Player"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "conqcubesApp": {
+    "game": {
+      "home": {
+        "title": "Games",
+        "createLabel": "Создать новый Game",
+        "createOrEditLabel": "Создать или отредактировать Game",
+        "notFound": "No Games found"
+      },
+      "created": "Новый Game создан с идентификатором {{ param }}",
+      "updated": "Game обновлен с идентификатором {{ param }}",
+      "deleted": "Game удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Game {{ id }}?"
+      },
+      "detail": {
+        "title": "Game"
+      },
+      "player": "Player",
+      "gameField": "Game Field",
+      "loggedPlayer": "Logged Player"
+    }
+  }
+}
