@@ -1,1 +1,1 @@
-export const CELL_UNIT_FACTOR = 15;
+export const CELL_UNIT_FACTOR = 20;

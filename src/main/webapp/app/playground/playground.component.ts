@@ -11,7 +11,7 @@ import { log } from 'app/shared/util/util';
   template: `
     <div class="row">
       <div class="col-sm-8">
-        playground
+        <jhi-field [field]="field" [placeCell]="newCell"></jhi-field>
         <button class="btn btn-default" jhiTranslate="playground.genfield" (click)="onCreateField()">
           Создать поле
         </button>
@@ -37,14 +37,14 @@ export class PlaygroundComponent implements OnInit {
   ngOnInit() {
     this.accountService.identity().then(player => {
       this.player = player;
-      this.field = this.playgroundService.createField();
+      this.field = this.playgroundService.genField();
       this.newCell = this.playgroundService.createCell(4, 4, this.player, this.field);
       log(this.newCell);
     });
   }
 
   onCreateField() {
-    this.field = this.playgroundService.createField();
+    this.field = this.playgroundService.genField();
   }
 
   onGenCell() {
