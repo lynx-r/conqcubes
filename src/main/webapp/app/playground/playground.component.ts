@@ -45,6 +45,7 @@ export class PlaygroundComponent implements OnInit {
 
   onCreateField() {
     this.field = this.playgroundService.genField();
+    log(this.field);
   }
 
   onGenCell() {

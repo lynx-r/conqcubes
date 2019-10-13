@@ -1,15 +1,19 @@
-{{field?.cells.length }}
-<ng-container *ngIf="cols && rows">
-    <ko-stage (mousemove)="onMousemove($event)"
-              [config]="configStage"
-    >
-        <ko-layer #fieldLayer>
-            <ko-group *ngFor="let r of rows">
-                <ko-rect *ngFor="let c of cols" [config]="getCellConfig(r, c)"></ko-rect>
-            </ko-group>
-        </ko-layer>
-    </ko-stage>
-</ng-container>
+<div *ngIf="cols && rows" [style.height]="field?.height * size + 4 + 'px'" class="field-wrapper">
+    <svg-container containerId="mainContainer">
+        <svg-container (mouseMoveEvent)="onMousemove($event, r)" *ngFor="let r of rows"
+                       [containerId]="'row-' + r"
+                       [height]="size"
+        >
+            <svg-rect *ngFor="let c of cols"
+                      [classes]="['bordered']" [color]="getFill(c, r)"
+                      [height]="size"
+                      [width]="size"
+                      [x]="getCoords(c)" y="0"
+            >
+            </svg-rect>
+        </svg-container>
+    </svg-container>
+</div>
 <div *ngIf="field">
     Поле шириной {{field.width}} и высотой {{field.height}}
 </div>

@@ -7,6 +7,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
 import { KonvaModule } from 'ng2-konva';
+import { NgxSvgModule } from 'ngx-svg';
 
 @NgModule({
   exports: [
@@ -18,7 +19,8 @@ import { KonvaModule } from 'ng2-konva';
     FontAwesomeModule,
     ReactiveFormsModule,
     TranslateModule,
-    KonvaModule
+    KonvaModule,
+    NgxSvgModule
   ]
 })
 export class ConqcubesSharedLibsModule {}
