@@ -18,6 +18,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           path: 'account',
           loadChildren: () => import('./account/account.module').then(m => m.ConqcubesAccountModule)
         },
+        {
+          path: 'playground',
+          loadChildren: () => import('./playground/playground.module').then(m => m.PlaygroundModule)
+        },
         ...LAYOUT_ROUTES
       ],
       { enableTracing: DEBUG_INFO_ENABLED }
