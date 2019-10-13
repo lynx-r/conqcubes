@@ -20,7 +20,7 @@ describe('Service Tests', () => {
       service = injector.get(CellService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new Cell(0, 0, 0, 0, 0);
+      elemDefault = new Cell(0, 0, 0, 0);
     });
 
     describe('Service methods', () => {

@@ -5,10 +5,18 @@ import { JhiAlertComponent } from './alert/alert.component';
 import { JhiAlertErrorComponent } from './alert/alert-error.component';
 import { JhiLoginModalComponent } from './login/login.component';
 import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
+import { EmptyStrPipe } from './pipes/empty-str.pipe';
 
 @NgModule({
   imports: [ConqcubesSharedLibsModule],
-  declarations: [FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent, JhiLoginModalComponent, HasAnyAuthorityDirective],
+  declarations: [
+    FindLanguageFromKeyPipe,
+    JhiAlertComponent,
+    JhiAlertErrorComponent,
+    JhiLoginModalComponent,
+    HasAnyAuthorityDirective,
+    EmptyStrPipe
+  ],
   entryComponents: [JhiLoginModalComponent],
   exports: [
     ConqcubesSharedLibsModule,
@@ -16,7 +24,8 @@ import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
     JhiAlertComponent,
     JhiAlertErrorComponent,
     JhiLoginModalComponent,
-    HasAnyAuthorityDirective
+    HasAnyAuthorityDirective,
+    EmptyStrPipe
   ]
 })
 export class ConqcubesSharedModule {}

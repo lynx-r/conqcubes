@@ -71,7 +71,6 @@ export class CellUpdateComponent implements OnInit {
       x: cell.x,
       y: cell.y,
       w: cell.w,
-      h: cell.h,
       field: cell.field,
       player: cell.player
     });
@@ -123,7 +122,6 @@ export class CellUpdateComponent implements OnInit {
       x: this.editForm.get(['x']).value,
       y: this.editForm.get(['y']).value,
       w: this.editForm.get(['w']).value,
-      h: this.editForm.get(['h']).value,
       field: this.editForm.get(['field']).value,
       player: this.editForm.get(['player']).value
     };

@@ -6,7 +6,6 @@ export interface ICell {
   x?: number;
   y?: number;
   w?: number;
-  h?: number;
   field?: IField;
   player?: IPlayer;
 }
@@ -17,7 +16,6 @@ export class Cell implements ICell {
     public x?: number,
     public y?: number,
     public w?: number,
-    public h?: number,
     public field?: IField,
     public player?: IPlayer
   ) {}

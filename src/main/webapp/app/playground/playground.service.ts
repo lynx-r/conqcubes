@@ -19,7 +19,16 @@ export class PlaygroundService {
     cell.x = 0;
     cell.y = 0;
     cell.w = val;
-    cell.h = val;
+    cell.player = player;
+    cell.field = field;
+    return cell;
+  }
+
+  createCell(w: number, h: number, player: Player, field: Field) {
+    const cell = new Cell();
+    cell.x = 0;
+    cell.y = 0;
+    cell.w = w;
     cell.player = player;
     cell.field = field;
     return cell;

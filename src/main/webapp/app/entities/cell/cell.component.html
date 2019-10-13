@@ -22,7 +22,6 @@
                 <th><span jhiTranslate="conqcubesApp.cell.x">X</span></th>
                 <th><span jhiTranslate="conqcubesApp.cell.y">Y</span></th>
                 <th><span jhiTranslate="conqcubesApp.cell.w">W</span></th>
-                <th><span jhiTranslate="conqcubesApp.cell.h">H</span></th>
                 <th><span jhiTranslate="conqcubesApp.cell.field">Field</span></th>
                 <th><span jhiTranslate="conqcubesApp.cell.player">Player</span></th>
                 <th></th>
@@ -34,7 +33,6 @@
                 <td>{{cell.x}}</td>
                 <td>{{cell.y}}</td>
                 <td>{{cell.w}}</td>
-                <td>{{cell.h}}</td>
                 <td>
                     <div *ngIf="cell.field">
                         <a [routerLink]="['/field', cell.field?.id, 'view' ]">{{cell.field?.id}}</a>

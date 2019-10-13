@@ -4,6 +4,7 @@ import { PlaygroundService } from 'app/playground/playground.service';
 import { AccountService } from 'app/core/auth/account.service';
 import { Player } from 'app/shared/model/player.model';
 import { Cell } from 'app/shared/model/cell.model';
+import { log } from 'app/shared/util/util';
 
 @Component({
   selector: 'jhi-playground',
@@ -34,8 +35,12 @@ export class PlaygroundComponent implements OnInit {
   constructor(private accountService: AccountService, private playgroundService: PlaygroundService) {}
 
   ngOnInit() {
-    this.field = this.playgroundService.createField();
-    this.accountService.getAuthenticationState().subscribe(player => (this.player = player));
+    this.accountService.identity().then(player => {
+      this.player = player;
+      this.field = this.playgroundService.createField();
+      this.newCell = this.playgroundService.createCell(4, 4, this.player, this.field);
+      log(this.newCell);
+    });
   }
 
   onCreateField() {

@@ -94,15 +94,6 @@ public class Cell implements Serializable {
         return h;
     }
 
-    public void setH(Integer h) {
-        this.h = h;
-    }
-
-    public Cell h(Integer h) {
-        this.h = h;
-        return this;
-    }
-
     public Field getField() {
         return field;
     }

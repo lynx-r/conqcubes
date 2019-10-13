@@ -1,1 +1,10 @@
-{{cell | json}}
+<ko-stage [config]="configStage"
+>
+    <ko-layer>
+        <ko-rect [config]="configRect"></ko-rect>
+    </ko-layer>
+</ko-stage>
+<div>
+    Выпало: {{score | emptyStr}},
+    Площадь: {{(cell?.w * cell?.w) | emptyStr}}
+</div>

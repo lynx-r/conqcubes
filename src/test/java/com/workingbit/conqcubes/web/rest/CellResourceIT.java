@@ -80,8 +80,7 @@ public class CellResourceIT {
         Cell cell = new Cell()
             .x(DEFAULT_X)
             .y(DEFAULT_Y)
-            .w(DEFAULT_W)
-            .h(DEFAULT_H);
+            .w(DEFAULT_W);
         return cell;
     }
 
@@ -95,8 +94,7 @@ public class CellResourceIT {
         Cell cell = new Cell()
             .x(UPDATED_X)
             .y(UPDATED_Y)
-            .w(UPDATED_W)
-            .h(UPDATED_H);
+            .w(UPDATED_W);
         return cell;
     }
 
@@ -171,8 +169,7 @@ public class CellResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(cell.getId().intValue())))
             .andExpect(jsonPath("$.[*].x").value(hasItem(DEFAULT_X)))
             .andExpect(jsonPath("$.[*].y").value(hasItem(DEFAULT_Y)))
-            .andExpect(jsonPath("$.[*].w").value(hasItem(DEFAULT_W)))
-            .andExpect(jsonPath("$.[*].h").value(hasItem(DEFAULT_H)));
+            .andExpect(jsonPath("$.[*].w").value(hasItem(DEFAULT_W)));
     }
 
     @Test
@@ -188,8 +185,7 @@ public class CellResourceIT {
             .andExpect(jsonPath("$.id").value(cell.getId().intValue()))
             .andExpect(jsonPath("$.x").value(DEFAULT_X))
             .andExpect(jsonPath("$.y").value(DEFAULT_Y))
-            .andExpect(jsonPath("$.w").value(DEFAULT_W))
-            .andExpect(jsonPath("$.h").value(DEFAULT_H));
+            .andExpect(jsonPath("$.w").value(DEFAULT_W));
     }
 
     @Test
@@ -215,8 +211,7 @@ public class CellResourceIT {
         updatedCell
             .x(UPDATED_X)
             .y(UPDATED_Y)
-            .w(UPDATED_W)
-            .h(UPDATED_H);
+            .w(UPDATED_W);
 
         restCellMockMvc.perform(put("/api/cells")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
