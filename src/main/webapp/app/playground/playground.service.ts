@@ -12,7 +12,7 @@ export class PlaygroundService {
 
   genCell(player: Player, field: Field) {
     const cell = new Cell();
-    const val = Util.getRandomArbitrary(1, 6);
+    const val = Util.getRandomArbitrary(1, 9);
     cell.x = 0;
     cell.y = 0;
     cell.w = val;
@@ -23,8 +23,8 @@ export class PlaygroundService {
 
   genField() {
     const field = new Field();
-    field.width = Util.getRandomArbitrary(10, 20);
-    field.height = Util.getRandomArbitrary(10, 20);
+    field.width = Util.getRandomArbitrary(10, 40);
+    field.height = Util.getRandomArbitrary(10, 40);
     field.cells = [];
     for (let i = 0; i < field.height; i++) {
       for (let j = 0; j < field.width; j++) {
